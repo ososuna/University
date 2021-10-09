@@ -1,11 +1,12 @@
 package classes;
 
-public class Professor extends Person {
+public class Professor extends Employee {
 
     private String department;
 
-    public Professor(String name, String lastName, String id, String maritalStatus, String department) {
-        super(name, lastName, id, maritalStatus);
+    public Professor(String name, String lastName, String id, String maritalStatus, int incomeYear, int officeNumber,
+            String department) {
+        super(name, lastName, id, maritalStatus, incomeYear, officeNumber);
         this.department = department;
     }
 
