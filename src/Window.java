@@ -5,6 +5,7 @@ import java.awt.Font;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -33,6 +34,11 @@ public class Window extends JFrame implements ActionListener {
     private JButton registerStudentSubmit;
     private JButton registerProfessorSubmit;
     private JButton registerServiceStaffSubmit;
+    private JButton updateMaritalStatusSubmit;
+    private JButton updateOfficeNumberSubmit;
+    private JButton updateCourseSubmit;
+    private JButton updateDepartmentSubmit;
+    private JButton updateSectionSubmit;
 
     private JLabel id;
     private JTextField tid;
@@ -52,6 +58,8 @@ public class Window extends JFrame implements ActionListener {
     private JTextField tdepartment;
     private JLabel section;
     private JTextField tsection;
+    private JLabel person;
+    private JComboBox<String> cperson;
 
     private JTextArea tout;
 
@@ -678,6 +686,256 @@ public class Window extends JFrame implements ActionListener {
 
     }
 
+    private void updateMaritalStatus() {
+        
+        JLabel title;
+
+        title = new JLabel("Update Marital Status");
+        title.setFont(new Font("Arial", Font.PLAIN, 20));
+        title.setSize(400, 40);
+        title.setLocation(379, 40);
+        panel.add(title);
+    
+        person = new JLabel("Select person");
+        person.setFont(new Font("Arial", Font.PLAIN, 16));
+        person.setSize(180, 20);
+        person.setLocation(100, 100);
+        panel.add(person);
+
+        cperson = new JComboBox<String>();
+        cperson.setFont(new Font("Arial", Font.PLAIN, 15));
+        cperson.setSize(160, 20);
+        cperson.setLocation(100, 130);
+        panel.add(cperson);
+
+        maritalStatus= new JLabel("Enter marital status");
+        maritalStatus.setFont(new Font("Arial", Font.PLAIN, 16));
+        maritalStatus.setSize(140, 20);
+        maritalStatus.setLocation(100, 200);
+        panel.add(maritalStatus);
+  
+        tmaritalStatus= new JTextField();
+        tmaritalStatus.setFont(new Font("Arial", Font.PLAIN, 14));
+        tmaritalStatus.setSize(190, 20);
+        tmaritalStatus.setLocation(100, 230);
+        panel.add(tmaritalStatus);
+
+        updateMaritalStatusSubmit = new JButton("Submit");
+        updateMaritalStatusSubmit.setFont(new Font("Arial", Font.PLAIN, 16));
+        updateMaritalStatusSubmit.setSize(100, 30);
+        updateMaritalStatusSubmit.setLocation(100, 660);
+        updateMaritalStatusSubmit.addActionListener(this);
+        panel.add(updateMaritalStatusSubmit);
+
+        home = new JButton("Home");
+        home.setFont(new Font("Arial", Font.PLAIN, 16));
+        home.setSize(100, 30);
+        home.setLocation(100, 700);
+        home.addActionListener(this);
+        panel.add(home);
+        
+    }
+    
+    private void updateOffice() {
+        
+        JLabel title;
+
+        title = new JLabel("Update Office Number");
+        title.setFont(new Font("Arial", Font.PLAIN, 20));
+        title.setSize(400, 40);
+        title.setLocation(379, 40);
+        panel.add(title);
+    
+        person = new JLabel("Select person");
+        person.setFont(new Font("Arial", Font.PLAIN, 16));
+        person.setSize(180, 20);
+        person.setLocation(100, 100);
+        panel.add(person);
+
+        cperson = new JComboBox<String>();
+        cperson.setFont(new Font("Arial", Font.PLAIN, 15));
+        cperson.setSize(160, 20);
+        cperson.setLocation(100, 130);
+        panel.add(cperson);
+
+        officeNumber = new JLabel("Enter office number");
+        officeNumber.setFont(new Font("Arial", Font.PLAIN, 16));
+        officeNumber.setSize(140, 20);
+        officeNumber.setLocation(100, 200);
+        panel.add(officeNumber);
+  
+        tofficeNumber = new JTextField();
+        tofficeNumber.setFont(new Font("Arial", Font.PLAIN, 14));
+        tofficeNumber.setSize(190, 20);
+        tofficeNumber.setLocation(100, 230);
+        panel.add(tofficeNumber);
+
+        updateOfficeNumberSubmit = new JButton("Submit");
+        updateOfficeNumberSubmit.setFont(new Font("Arial", Font.PLAIN, 16));
+        updateOfficeNumberSubmit.setSize(100, 30);
+        updateOfficeNumberSubmit.setLocation(100, 660);
+        updateOfficeNumberSubmit.addActionListener(this);
+        panel.add(updateOfficeNumberSubmit);
+
+        home = new JButton("Home");
+        home.setFont(new Font("Arial", Font.PLAIN, 16));
+        home.setSize(100, 30);
+        home.setLocation(100, 700);
+        home.addActionListener(this);
+        panel.add(home);
+        
+    }
+
+    private void updateCourse() {
+        
+        JLabel title;
+
+        title = new JLabel("Update Course");
+        title.setFont(new Font("Arial", Font.PLAIN, 20));
+        title.setSize(400, 40);
+        title.setLocation(379, 40);
+        panel.add(title);
+    
+        person = new JLabel("Select person");
+        person.setFont(new Font("Arial", Font.PLAIN, 16));
+        person.setSize(180, 20);
+        person.setLocation(100, 100);
+        panel.add(person);
+
+        cperson = new JComboBox<String>();
+        cperson.setFont(new Font("Arial", Font.PLAIN, 15));
+        cperson.setSize(160, 20);
+        cperson.setLocation(100, 130);
+        panel.add(cperson);
+
+        course = new JLabel("Enter course");
+        course.setFont(new Font("Arial", Font.PLAIN, 16));
+        course.setSize(140, 20);
+        course.setLocation(100, 200);
+        panel.add(course);
+  
+        tcourse = new JTextField();
+        tcourse.setFont(new Font("Arial", Font.PLAIN, 14));
+        tcourse.setSize(190, 20);
+        tcourse.setLocation(100, 230);
+        panel.add(tcourse);
+
+        updateCourseSubmit = new JButton("Submit");
+        updateCourseSubmit.setFont(new Font("Arial", Font.PLAIN, 16));
+        updateCourseSubmit.setSize(100, 30);
+        updateCourseSubmit.setLocation(100, 660);
+        updateCourseSubmit.addActionListener(this);
+        panel.add(updateCourseSubmit);
+
+        home = new JButton("Home");
+        home.setFont(new Font("Arial", Font.PLAIN, 16));
+        home.setSize(100, 30);
+        home.setLocation(100, 700);
+        home.addActionListener(this);
+        panel.add(home);
+        
+    }
+    
+    private void updateDepartment() {
+        
+        JLabel title;
+
+        title = new JLabel("Update Department");
+        title.setFont(new Font("Arial", Font.PLAIN, 20));
+        title.setSize(400, 40);
+        title.setLocation(379, 40);
+        panel.add(title);
+    
+        person = new JLabel("Select person");
+        person.setFont(new Font("Arial", Font.PLAIN, 16));
+        person.setSize(180, 20);
+        person.setLocation(100, 100);
+        panel.add(person);
+
+        cperson = new JComboBox<String>();
+        cperson.setFont(new Font("Arial", Font.PLAIN, 15));
+        cperson.setSize(160, 20);
+        cperson.setLocation(100, 130);
+        panel.add(cperson);
+
+        department = new JLabel("Enter department");
+        department.setFont(new Font("Arial", Font.PLAIN, 16));
+        department.setSize(140, 20);
+        department.setLocation(100, 200);
+        panel.add(department);
+  
+        tdepartment = new JTextField();
+        tdepartment.setFont(new Font("Arial", Font.PLAIN, 14));
+        tdepartment.setSize(190, 20);
+        tdepartment.setLocation(100, 230);
+        panel.add(tdepartment);
+
+        updateDepartmentSubmit = new JButton("Submit");
+        updateDepartmentSubmit.setFont(new Font("Arial", Font.PLAIN, 16));
+        updateDepartmentSubmit.setSize(100, 30);
+        updateDepartmentSubmit.setLocation(100, 660);
+        updateDepartmentSubmit.addActionListener(this);
+        panel.add(updateDepartmentSubmit);
+
+        home = new JButton("Home");
+        home.setFont(new Font("Arial", Font.PLAIN, 16));
+        home.setSize(100, 30);
+        home.setLocation(100, 700);
+        home.addActionListener(this);
+        panel.add(home);
+        
+    }
+
+    private void updateSection() {
+        
+        JLabel title;
+
+        title = new JLabel("Update Section");
+        title.setFont(new Font("Arial", Font.PLAIN, 20));
+        title.setSize(400, 40);
+        title.setLocation(379, 40);
+        panel.add(title);
+    
+        person = new JLabel("Select person");
+        person.setFont(new Font("Arial", Font.PLAIN, 16));
+        person.setSize(180, 20);
+        person.setLocation(100, 100);
+        panel.add(person);
+
+        cperson = new JComboBox<String>();
+        cperson.setFont(new Font("Arial", Font.PLAIN, 15));
+        cperson.setSize(160, 20);
+        cperson.setLocation(100, 130);
+        panel.add(cperson);
+
+        section = new JLabel("Enter section");
+        section.setFont(new Font("Arial", Font.PLAIN, 16));
+        section.setSize(140, 20);
+        section.setLocation(100, 200);
+        panel.add(section);
+  
+        tsection = new JTextField();
+        tsection.setFont(new Font("Arial", Font.PLAIN, 14));
+        tsection.setSize(190, 20);
+        tsection.setLocation(100, 230);
+        panel.add(tsection);
+
+        updateSectionSubmit = new JButton("Submit");
+        updateSectionSubmit.setFont(new Font("Arial", Font.PLAIN, 16));
+        updateSectionSubmit.setSize(100, 30);
+        updateSectionSubmit.setLocation(100, 660);
+        updateSectionSubmit.addActionListener(this);
+        panel.add(updateSectionSubmit);
+
+        home = new JButton("Home");
+        home.setFont(new Font("Arial", Font.PLAIN, 16));
+        home.setSize(100, 30);
+        home.setLocation(100, 700);
+        home.addActionListener(this);
+        panel.add(home);
+        
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {    
         try {
@@ -704,6 +962,16 @@ public class Window extends JFrame implements ActionListener {
                 consultProfessors();
             } else if(e.getSource() == consultServiceStaff) {
                 consultServiceStaff();
+            } else if(e.getSource() == updateMaritalStatus) {
+                updateMaritalStatus();
+            } else if(e.getSource() == updateOffice) {
+                updateOffice();
+            } else if(e.getSource() == updateCourse) {
+                updateCourse();
+            } else if(e.getSource() == updateDepartment) {
+                updateDepartment();
+            } else if(e.getSource() == updateSection) {
+                updateSection();
             }
         } catch (Exception error) {
             System.out.println(error);
