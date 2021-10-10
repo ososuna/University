@@ -3,10 +3,13 @@ import java.awt.event.ActionListener;
 import java.awt.Dimension;
 import java.awt.Font;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 public class Window extends JFrame implements ActionListener {
     
@@ -26,9 +29,34 @@ public class Window extends JFrame implements ActionListener {
     private JButton updateCourse;
     private JButton updateDepartment;
     private JButton updateSection;
+    private JButton home;
+    private JButton registerStudentSubmit;
+    private JButton registerProfessorSubmit;
+    private JButton registerServiceStaffSubmit;
+
+    private JLabel id;
+    private JTextField tid;
+    private JLabel name;
+    private JTextField tname;
+    private JLabel lastname;
+    private JTextField tlastname;
+    private JLabel maritalStatus;
+    private JTextField tmaritalStatus;
+    private JLabel course;
+    private JTextField tcourse;
+    private JLabel incomeYear;
+    private JTextField tincomeYear;
+    private JLabel officeNumber;
+    private JTextField tofficeNumber;
+    private JLabel department;
+    private JTextField tdepartment;
+    private JLabel section;
+    private JTextField tsection;
+
+    private JTextArea tout;
 
     public Window() {
-        setSize(900, 600);
+        setSize(900, 800);
         setTitle("Monsters University");
         setLocationRelativeTo(null);
         setMinimumSize(new Dimension(200, 200));
@@ -120,6 +148,13 @@ public class Window extends JFrame implements ActionListener {
         registerServiceStaff.setLocation(360, 300);
         registerServiceStaff.addActionListener(this);
         panel.add(registerServiceStaff);
+        
+        home = new JButton("Home");
+        home.setFont(new Font("Arial", Font.PLAIN, 16));
+        home.setSize(200, 60);
+        home.setLocation(360, 400);
+        home.addActionListener(this);
+        panel.add(home);
 
     }
     
@@ -153,6 +188,13 @@ public class Window extends JFrame implements ActionListener {
         consultServiceStaff.setLocation(360, 300);
         consultServiceStaff.addActionListener(this);
         panel.add(consultServiceStaff);
+
+        home = new JButton("Home");
+        home.setFont(new Font("Arial", Font.PLAIN, 16));
+        home.setSize(200, 60);
+        home.setLocation(360, 400);
+        home.addActionListener(this);
+        panel.add(home);
 
     }
     
@@ -201,22 +243,376 @@ public class Window extends JFrame implements ActionListener {
         updateSection.addActionListener(this);
         panel.add(updateSection);
 
+        home = new JButton("Home");
+        home.setFont(new Font("Arial", Font.PLAIN, 16));
+        home.setSize(200, 60);
+        home.setLocation(360, 600);
+        home.addActionListener(this);
+        panel.add(home);
+
+    }
+
+    private void registerStudent() {
+        
+        JLabel title;
+
+        title = new JLabel("Register Student");
+        title.setFont(new Font("Arial", Font.PLAIN, 20));
+        title.setSize(400, 40);
+        title.setLocation(379, 40);
+        panel.add(title);
+        
+        id = new JLabel("Enter id");
+        id.setFont(new Font("Arial", Font.PLAIN, 16));
+        id.setSize(140, 20);
+        id.setLocation(100, 100);
+        panel.add(id);
+  
+        tid = new JTextField();
+        tid.setFont(new Font("Arial", Font.PLAIN, 14));
+        tid.setSize(190, 20);
+        tid.setLocation(100, 130);
+        panel.add(tid);
+
+        name = new JLabel("Enter name");
+        name.setFont(new Font("Arial", Font.PLAIN, 16));
+        name.setSize(140, 20);
+        name.setLocation(100, 200);
+        panel.add(name);
+  
+        tname = new JTextField();
+        tname.setFont(new Font("Arial", Font.PLAIN, 14));
+        tname.setSize(190, 20);
+        tname.setLocation(100, 230);
+        panel.add(tname);
+
+        lastname = new JLabel("Enter lastname");
+        lastname.setFont(new Font("Arial", Font.PLAIN, 16));
+        lastname.setSize(140, 20);
+        lastname.setLocation(100, 300);
+        panel.add(lastname);
+  
+        tlastname = new JTextField();
+        tlastname.setFont(new Font("Arial", Font.PLAIN, 14));
+        tlastname.setSize(190, 20);
+        tlastname.setLocation(100, 330);
+        panel.add(tlastname);
+
+        maritalStatus = new JLabel("Enter marital status");
+        maritalStatus.setFont(new Font("Arial", Font.PLAIN, 16));
+        maritalStatus.setSize(140, 20);
+        maritalStatus.setLocation(100, 400);
+        panel.add(maritalStatus);
+  
+        tmaritalStatus = new JTextField();
+        tmaritalStatus.setFont(new Font("Arial", Font.PLAIN, 14));
+        tmaritalStatus.setSize(190, 20);
+        tmaritalStatus.setLocation(100, 430);
+        panel.add(tmaritalStatus);
+
+        course = new JLabel("Enter course");
+        course.setFont(new Font("Arial", Font.PLAIN, 16));
+        course.setSize(140, 20);
+        course.setLocation(100, 500);
+        panel.add(course);
+  
+        tcourse = new JTextField();
+        tcourse.setFont(new Font("Arial", Font.PLAIN, 14));
+        tcourse.setSize(190, 20);
+        tcourse.setLocation(100, 530);
+        panel.add(tcourse);
+
+        tout = new JTextArea();
+        tout.setBorder(BorderFactory.createCompoundBorder(
+        tout.getBorder(), 
+        BorderFactory.createEmptyBorder(20, 20, 5, 20)));
+        tout.setFont(new Font("Arial", Font.PLAIN, 16));
+        tout.setSize(400, 400);
+        tout.setLocation(360, 100);
+        tout.setLineWrap(true);
+        tout.setEditable(false);
+        panel.add(tout);
+
+        registerStudentSubmit = new JButton("Submit");
+        registerStudentSubmit.setFont(new Font("Arial", Font.PLAIN, 16));
+        registerStudentSubmit.setSize(100, 30);
+        registerStudentSubmit.setLocation(100, 600);
+        registerStudentSubmit.addActionListener(this);
+        panel.add(registerStudentSubmit);
+        
+        home = new JButton("Home");
+        home.setFont(new Font("Arial", Font.PLAIN, 16));
+        home.setSize(100, 30);
+        home.setLocation(100, 640);
+        home.addActionListener(this);
+        panel.add(home);
+    }
+
+    private void registerProfessor() {
+        
+        JLabel title;
+
+        title = new JLabel("Register Professor");
+        title.setFont(new Font("Arial", Font.PLAIN, 20));
+        title.setSize(400, 40);
+        title.setLocation(379, 40);
+        panel.add(title);
+        
+        id = new JLabel("Enter id");
+        id.setFont(new Font("Arial", Font.PLAIN, 16));
+        id.setSize(140, 20);
+        id.setLocation(100, 100);
+        panel.add(id);
+  
+        tid = new JTextField();
+        tid.setFont(new Font("Arial", Font.PLAIN, 14));
+        tid.setSize(190, 20);
+        tid.setLocation(100, 130);
+        panel.add(tid);
+
+        name = new JLabel("Enter name");
+        name.setFont(new Font("Arial", Font.PLAIN, 16));
+        name.setSize(140, 20);
+        name.setLocation(100, 180);
+        panel.add(name);
+  
+        tname = new JTextField();
+        tname.setFont(new Font("Arial", Font.PLAIN, 14));
+        tname.setSize(190, 20);
+        tname.setLocation(100, 210);
+        panel.add(tname);
+
+        lastname = new JLabel("Enter lastname");
+        lastname.setFont(new Font("Arial", Font.PLAIN, 16));
+        lastname.setSize(140, 20);
+        lastname.setLocation(100, 260);
+        panel.add(lastname);
+  
+        tlastname = new JTextField();
+        tlastname.setFont(new Font("Arial", Font.PLAIN, 14));
+        tlastname.setSize(190, 20);
+        tlastname.setLocation(100, 290);
+        panel.add(tlastname);
+
+        maritalStatus = new JLabel("Enter marital status");
+        maritalStatus.setFont(new Font("Arial", Font.PLAIN, 16));
+        maritalStatus.setSize(140, 20);
+        maritalStatus.setLocation(100, 340);
+        panel.add(maritalStatus);
+  
+        tmaritalStatus = new JTextField();
+        tmaritalStatus.setFont(new Font("Arial", Font.PLAIN, 14));
+        tmaritalStatus.setSize(190, 20);
+        tmaritalStatus.setLocation(100, 370);
+        panel.add(tmaritalStatus);
+
+        incomeYear = new JLabel("Enter income year");
+        incomeYear.setFont(new Font("Arial", Font.PLAIN, 16));
+        incomeYear.setSize(140, 20);
+        incomeYear.setLocation(100, 420);
+        panel.add(incomeYear);
+  
+        tincomeYear = new JTextField();
+        tincomeYear.setFont(new Font("Arial", Font.PLAIN, 14));
+        tincomeYear.setSize(190, 20);
+        tincomeYear.setLocation(100, 450);
+        panel.add(tincomeYear);
+        
+        officeNumber = new JLabel("Enter office number");
+        officeNumber.setFont(new Font("Arial", Font.PLAIN, 16));
+        officeNumber.setSize(140, 20);
+        officeNumber.setLocation(100, 500);
+        panel.add(officeNumber);
+  
+        tofficeNumber = new JTextField();
+        tofficeNumber.setFont(new Font("Arial", Font.PLAIN, 14));
+        tofficeNumber.setSize(190, 20);
+        tofficeNumber.setLocation(100, 530);
+        panel.add(tofficeNumber);
+
+        department = new JLabel("Enter department");
+        department.setFont(new Font("Arial", Font.PLAIN, 16));
+        department.setSize(140, 20);
+        department.setLocation(100, 580);
+        panel.add(department);
+  
+        tdepartment = new JTextField();
+        tdepartment.setFont(new Font("Arial", Font.PLAIN, 14));
+        tdepartment.setSize(190, 20);
+        tdepartment.setLocation(100, 610);
+        panel.add(tdepartment);
+
+        tout = new JTextArea();
+        tout.setBorder(BorderFactory.createCompoundBorder(
+        tout.getBorder(), 
+        BorderFactory.createEmptyBorder(20, 20, 5, 20)));
+        tout.setFont(new Font("Arial", Font.PLAIN, 16));
+        tout.setSize(400, 400);
+        tout.setLocation(360, 100);
+        tout.setLineWrap(true);
+        tout.setEditable(false);
+        panel.add(tout);
+
+        registerProfessorSubmit = new JButton("Submit");
+        registerProfessorSubmit.setFont(new Font("Arial", Font.PLAIN, 16));
+        registerProfessorSubmit.setSize(100, 30);
+        registerProfessorSubmit.setLocation(100, 660);
+        registerProfessorSubmit.addActionListener(this);
+        panel.add(registerProfessorSubmit);
+        
+        home = new JButton("Home");
+        home.setFont(new Font("Arial", Font.PLAIN, 16));
+        home.setSize(100, 30);
+        home.setLocation(100, 700);
+        home.addActionListener(this);
+        panel.add(home);
+    }
+
+    private void registerServiceStaff() {
+        
+        JLabel title;
+
+        title = new JLabel("Register Service Staff");
+        title.setFont(new Font("Arial", Font.PLAIN, 20));
+        title.setSize(400, 40);
+        title.setLocation(379, 40);
+        panel.add(title);
+        
+        id = new JLabel("Enter id");
+        id.setFont(new Font("Arial", Font.PLAIN, 16));
+        id.setSize(140, 20);
+        id.setLocation(100, 100);
+        panel.add(id);
+  
+        tid = new JTextField();
+        tid.setFont(new Font("Arial", Font.PLAIN, 14));
+        tid.setSize(190, 20);
+        tid.setLocation(100, 130);
+        panel.add(tid);
+
+        name = new JLabel("Enter name");
+        name.setFont(new Font("Arial", Font.PLAIN, 16));
+        name.setSize(140, 20);
+        name.setLocation(100, 180);
+        panel.add(name);
+  
+        tname = new JTextField();
+        tname.setFont(new Font("Arial", Font.PLAIN, 14));
+        tname.setSize(190, 20);
+        tname.setLocation(100, 210);
+        panel.add(tname);
+
+        lastname = new JLabel("Enter lastname");
+        lastname.setFont(new Font("Arial", Font.PLAIN, 16));
+        lastname.setSize(140, 20);
+        lastname.setLocation(100, 260);
+        panel.add(lastname);
+  
+        tlastname = new JTextField();
+        tlastname.setFont(new Font("Arial", Font.PLAIN, 14));
+        tlastname.setSize(190, 20);
+        tlastname.setLocation(100, 290);
+        panel.add(tlastname);
+
+        maritalStatus = new JLabel("Enter marital status");
+        maritalStatus.setFont(new Font("Arial", Font.PLAIN, 16));
+        maritalStatus.setSize(140, 20);
+        maritalStatus.setLocation(100, 340);
+        panel.add(maritalStatus);
+  
+        tmaritalStatus = new JTextField();
+        tmaritalStatus.setFont(new Font("Arial", Font.PLAIN, 14));
+        tmaritalStatus.setSize(190, 20);
+        tmaritalStatus.setLocation(100, 370);
+        panel.add(tmaritalStatus);
+
+        incomeYear = new JLabel("Enter income year");
+        incomeYear.setFont(new Font("Arial", Font.PLAIN, 16));
+        incomeYear.setSize(140, 20);
+        incomeYear.setLocation(100, 420);
+        panel.add(incomeYear);
+  
+        tincomeYear = new JTextField();
+        tincomeYear.setFont(new Font("Arial", Font.PLAIN, 14));
+        tincomeYear.setSize(190, 20);
+        tincomeYear.setLocation(100, 450);
+        panel.add(tincomeYear);
+        
+        officeNumber = new JLabel("Enter office number");
+        officeNumber.setFont(new Font("Arial", Font.PLAIN, 16));
+        officeNumber.setSize(140, 20);
+        officeNumber.setLocation(100, 500);
+        panel.add(officeNumber);
+  
+        tofficeNumber = new JTextField();
+        tofficeNumber.setFont(new Font("Arial", Font.PLAIN, 14));
+        tofficeNumber.setSize(190, 20);
+        tofficeNumber.setLocation(100, 530);
+        panel.add(tofficeNumber);
+
+        section = new JLabel("Enter section");
+        section.setFont(new Font("Arial", Font.PLAIN, 16));
+        section.setSize(140, 20);
+        section.setLocation(100, 580);
+        panel.add(section);
+  
+        tsection = new JTextField();
+        tsection.setFont(new Font("Arial", Font.PLAIN, 14));
+        tsection.setSize(190, 20);
+        tsection.setLocation(100, 610);
+        panel.add(tsection);
+
+        tout = new JTextArea();
+        tout.setBorder(BorderFactory.createCompoundBorder(
+        tout.getBorder(), 
+        BorderFactory.createEmptyBorder(20, 20, 5, 20)));
+        tout.setFont(new Font("Arial", Font.PLAIN, 16));
+        tout.setSize(400, 400);
+        tout.setLocation(360, 100);
+        tout.setLineWrap(true);
+        tout.setEditable(false);
+        panel.add(tout);
+
+        registerServiceStaffSubmit = new JButton("Submit");
+        registerServiceStaffSubmit.setFont(new Font("Arial", Font.PLAIN, 16));
+        registerServiceStaffSubmit.setSize(100, 30);
+        registerServiceStaffSubmit.setLocation(100, 660);
+        registerServiceStaffSubmit.addActionListener(this);
+        panel.add(registerServiceStaffSubmit);
+        
+        home = new JButton("Home");
+        home.setFont(new Font("Arial", Font.PLAIN, 16));
+        home.setSize(100, 30);
+        home.setLocation(100, 700);
+        home.addActionListener(this);
+        panel.add(home);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {    
         try {
+            
+            clearPanel();
+
             if (e.getSource() == register) {
-                clearPanel();
                 registerMenu();
             } else if (e.getSource() == consult) {
-                clearPanel();
                 consultMenu();
             } else if (e.getSource() == update) {
-                clearPanel();
                 updateMenu();
-            
-            } 
+            } else if(e.getSource() == home) {
+                menu();
+            } else if(e.getSource() == registerStudent) {
+                registerStudent();
+            } else if(e.getSource() == registerProfessor) {
+                registerProfessor();
+            } else if(e.getSource() == registerServiceStaff) {
+                registerServiceStaff();
+            } else if(e.getSource() == home) {
+
+            } else if(e.getSource() == home) {
+
+            }
         } catch (Exception error) {
             System.out.println(error);
         }
