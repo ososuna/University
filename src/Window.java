@@ -21,8 +21,8 @@ public class Window extends JFrame implements ActionListener {
     private JButton registerStudent;
     private JButton registerProfessor;
     private JButton registerServiceStaff;
-    private JButton consultStudent;
-    private JButton consultProfessor;
+    private JButton consultStudents;
+    private JButton consultProfessors;
     private JButton consultServiceStaff;
     private JButton updateMaritalStatus;
     private JButton updateOffice;
@@ -168,19 +168,19 @@ public class Window extends JFrame implements ActionListener {
         title.setLocation(360, 40);
         panel.add(title);
 
-        consultStudent = new JButton("Students");
-        consultStudent.setFont(new Font("Arial", Font.PLAIN, 16));
-        consultStudent.setSize(200, 60);
-        consultStudent.setLocation(360, 100);
-        consultStudent.addActionListener(this);
-        panel.add(consultStudent);
+        consultStudents = new JButton("Students");
+        consultStudents.setFont(new Font("Arial", Font.PLAIN, 16));
+        consultStudents.setSize(200, 60);
+        consultStudents.setLocation(360, 100);
+        consultStudents.addActionListener(this);
+        panel.add(consultStudents);
 
-        consultProfessor = new JButton("Professors");
-        consultProfessor.setFont(new Font("Arial", Font.PLAIN, 16));
-        consultProfessor.setSize(200, 60);
-        consultProfessor.setLocation(360, 200);
-        consultProfessor.addActionListener(this);
-        panel.add(consultProfessor);
+        consultProfessors = new JButton("Professors");
+        consultProfessors.setFont(new Font("Arial", Font.PLAIN, 16));
+        consultProfessors.setSize(200, 60);
+        consultProfessors.setLocation(360, 200);
+        consultProfessors.addActionListener(this);
+        panel.add(consultProfessors);
 
         consultServiceStaff = new JButton("Service Staff");
         consultServiceStaff.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -588,6 +588,96 @@ public class Window extends JFrame implements ActionListener {
         panel.add(home);
     }
 
+    private void consultStudents() {
+        
+        JLabel title;
+
+        title = new JLabel("Students");
+        title.setFont(new Font("Arial", Font.PLAIN, 20));
+        title.setSize(400, 40);
+        title.setLocation(379, 40);
+        panel.add(title);
+
+        tout = new JTextArea();
+        tout.setBorder(BorderFactory.createCompoundBorder(
+        tout.getBorder(), 
+        BorderFactory.createEmptyBorder(20, 20, 5, 20)));
+        tout.setFont(new Font("Arial", Font.PLAIN, 16));
+        tout.setSize(600, 560);
+        tout.setLocation(150, 100);
+        tout.setLineWrap(true);
+        tout.setEditable(false);
+        panel.add(tout);
+
+        home = new JButton("Home");
+        home.setFont(new Font("Arial", Font.PLAIN, 16));
+        home.setSize(100, 30);
+        home.setLocation(100, 700);
+        home.addActionListener(this);
+        panel.add(home);
+
+    }
+    
+    private void consultProfessors() {
+        
+        JLabel title;
+
+        title = new JLabel("Professors");
+        title.setFont(new Font("Arial", Font.PLAIN, 20));
+        title.setSize(400, 40);
+        title.setLocation(379, 40);
+        panel.add(title);
+
+        tout = new JTextArea();
+        tout.setBorder(BorderFactory.createCompoundBorder(
+        tout.getBorder(), 
+        BorderFactory.createEmptyBorder(20, 20, 5, 20)));
+        tout.setFont(new Font("Arial", Font.PLAIN, 16));
+        tout.setSize(600, 560);
+        tout.setLocation(150, 100);
+        tout.setLineWrap(true);
+        tout.setEditable(false);
+        panel.add(tout);
+
+        home = new JButton("Home");
+        home.setFont(new Font("Arial", Font.PLAIN, 16));
+        home.setSize(100, 30);
+        home.setLocation(100, 700);
+        home.addActionListener(this);
+        panel.add(home);
+        
+    }
+    
+    private void consultServiceStaff() {
+
+        JLabel title;
+
+        title = new JLabel("Service Staff");
+        title.setFont(new Font("Arial", Font.PLAIN, 20));
+        title.setSize(400, 40);
+        title.setLocation(379, 40);
+        panel.add(title);
+        
+        tout = new JTextArea();
+        tout.setBorder(BorderFactory.createCompoundBorder(
+        tout.getBorder(), 
+        BorderFactory.createEmptyBorder(20, 20, 5, 20)));
+        tout.setFont(new Font("Arial", Font.PLAIN, 16));
+        tout.setSize(600, 560);
+        tout.setLocation(150, 100);
+        tout.setLineWrap(true);
+        tout.setEditable(false);
+        panel.add(tout);
+
+        home = new JButton("Home");
+        home.setFont(new Font("Arial", Font.PLAIN, 16));
+        home.setSize(100, 30);
+        home.setLocation(100, 700);
+        home.addActionListener(this);
+        panel.add(home);
+
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {    
         try {
@@ -608,10 +698,12 @@ public class Window extends JFrame implements ActionListener {
                 registerProfessor();
             } else if(e.getSource() == registerServiceStaff) {
                 registerServiceStaff();
-            } else if(e.getSource() == home) {
-
-            } else if(e.getSource() == home) {
-
+            } else if(e.getSource() == consultStudents) {
+                consultStudents();
+            } else if(e.getSource() == consultProfessors) {
+                consultProfessors();
+            } else if(e.getSource() == consultServiceStaff) {
+                consultServiceStaff();
             }
         } catch (Exception error) {
             System.out.println(error);
