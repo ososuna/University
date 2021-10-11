@@ -1,5 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.Dimension;
 import java.awt.Font;
 
@@ -12,8 +13,15 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import classes.Person;
+import classes.Professor;
+import classes.ServiceStaff;
+import classes.Student;
+
 public class Window extends JFrame implements ActionListener {
     
+    private ArrayList<Person> persons = new ArrayList<Person>();
+
     private JPanel panel;
 
     private JButton register;
@@ -44,8 +52,8 @@ public class Window extends JFrame implements ActionListener {
     private JTextField tid;
     private JLabel name;
     private JTextField tname;
-    private JLabel lastname;
-    private JTextField tlastname;
+    private JLabel lastName;
+    private JTextField tlastName;
     private JLabel maritalStatus;
     private JTextField tmaritalStatus;
     private JLabel course;
@@ -294,17 +302,17 @@ public class Window extends JFrame implements ActionListener {
         tname.setLocation(100, 230);
         panel.add(tname);
 
-        lastname = new JLabel("Enter lastname");
-        lastname.setFont(new Font("Arial", Font.PLAIN, 16));
-        lastname.setSize(140, 20);
-        lastname.setLocation(100, 300);
-        panel.add(lastname);
+        lastName = new JLabel("Enter lastName");
+        lastName.setFont(new Font("Arial", Font.PLAIN, 16));
+        lastName.setSize(140, 20);
+        lastName.setLocation(100, 300);
+        panel.add(lastName);
   
-        tlastname = new JTextField();
-        tlastname.setFont(new Font("Arial", Font.PLAIN, 14));
-        tlastname.setSize(190, 20);
-        tlastname.setLocation(100, 330);
-        panel.add(tlastname);
+        tlastName = new JTextField();
+        tlastName.setFont(new Font("Arial", Font.PLAIN, 14));
+        tlastName.setSize(190, 20);
+        tlastName.setLocation(100, 330);
+        panel.add(tlastName);
 
         maritalStatus = new JLabel("Enter marital status");
         maritalStatus.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -390,17 +398,17 @@ public class Window extends JFrame implements ActionListener {
         tname.setLocation(100, 210);
         panel.add(tname);
 
-        lastname = new JLabel("Enter lastname");
-        lastname.setFont(new Font("Arial", Font.PLAIN, 16));
-        lastname.setSize(140, 20);
-        lastname.setLocation(100, 260);
-        panel.add(lastname);
+        lastName = new JLabel("Enter lastName");
+        lastName.setFont(new Font("Arial", Font.PLAIN, 16));
+        lastName.setSize(140, 20);
+        lastName.setLocation(100, 260);
+        panel.add(lastName);
   
-        tlastname = new JTextField();
-        tlastname.setFont(new Font("Arial", Font.PLAIN, 14));
-        tlastname.setSize(190, 20);
-        tlastname.setLocation(100, 290);
-        panel.add(tlastname);
+        tlastName = new JTextField();
+        tlastName.setFont(new Font("Arial", Font.PLAIN, 14));
+        tlastName.setSize(190, 20);
+        tlastName.setLocation(100, 290);
+        panel.add(tlastName);
 
         maritalStatus = new JLabel("Enter marital status");
         maritalStatus.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -510,17 +518,17 @@ public class Window extends JFrame implements ActionListener {
         tname.setLocation(100, 210);
         panel.add(tname);
 
-        lastname = new JLabel("Enter lastname");
-        lastname.setFont(new Font("Arial", Font.PLAIN, 16));
-        lastname.setSize(140, 20);
-        lastname.setLocation(100, 260);
-        panel.add(lastname);
+        lastName = new JLabel("Enter lastName");
+        lastName.setFont(new Font("Arial", Font.PLAIN, 16));
+        lastName.setSize(140, 20);
+        lastName.setLocation(100, 260);
+        panel.add(lastName);
   
-        tlastname = new JTextField();
-        tlastname.setFont(new Font("Arial", Font.PLAIN, 14));
-        tlastname.setSize(190, 20);
-        tlastname.setLocation(100, 290);
-        panel.add(tlastname);
+        tlastName = new JTextField();
+        tlastName.setFont(new Font("Arial", Font.PLAIN, 14));
+        tlastName.setSize(190, 20);
+        tlastName.setLocation(100, 290);
+        panel.add(tlastName);
 
         maritalStatus = new JLabel("Enter marital status");
         maritalStatus.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -600,11 +608,19 @@ public class Window extends JFrame implements ActionListener {
         
         JLabel title;
 
+        String data;
+
         title = new JLabel("Students");
         title.setFont(new Font("Arial", Font.PLAIN, 20));
         title.setSize(400, 40);
         title.setLocation(379, 40);
         panel.add(title);
+
+        data = "";
+
+        for (Person person : persons) {
+            data += person.toString() + "\n";
+        }
 
         tout = new JTextArea();
         tout.setBorder(BorderFactory.createCompoundBorder(
@@ -616,6 +632,9 @@ public class Window extends JFrame implements ActionListener {
         tout.setLineWrap(true);
         tout.setEditable(false);
         panel.add(tout);
+
+        tout.setText(data);
+        tout.setEditable(false);
 
         home = new JButton("Home");
         home.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -696,17 +715,17 @@ public class Window extends JFrame implements ActionListener {
         title.setLocation(379, 40);
         panel.add(title);
     
-        person = new JLabel("Select person");
-        person.setFont(new Font("Arial", Font.PLAIN, 16));
-        person.setSize(180, 20);
-        person.setLocation(100, 100);
-        panel.add(person);
-
-        cperson = new JComboBox<String>();
-        cperson.setFont(new Font("Arial", Font.PLAIN, 15));
-        cperson.setSize(160, 20);
-        cperson.setLocation(100, 130);
-        panel.add(cperson);
+        id = new JLabel("Enter id");
+        id.setFont(new Font("Arial", Font.PLAIN, 16));
+        id.setSize(140, 20);
+        id.setLocation(100, 100);
+        panel.add(id);
+  
+        tid = new JTextField();
+        tid.setFont(new Font("Arial", Font.PLAIN, 14));
+        tid.setSize(190, 20);
+        tid.setLocation(100, 130);
+        panel.add(tid);
 
         maritalStatus= new JLabel("Enter marital status");
         maritalStatus.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -936,42 +955,184 @@ public class Window extends JFrame implements ActionListener {
         
     }
 
+    private void registerStudentSubmit() {
+
+        System.out.println("registerStudentSubmit called");
+
+        Student student;
+        
+        String idValue              = tid.getText();        
+        String nameValue            = tname.getText();        
+        String lastNameValue        = tlastName.getText();        
+        String maritalStatusValue   = tmaritalStatus.getText();        
+        String courseValue          = tcourse.getText();
+        
+        student = new Student(
+            nameValue,
+            lastNameValue,
+            idValue,
+            maritalStatusValue,
+            courseValue
+        );
+
+        persons.add(student);
+
+        tout.setText(
+            "Student " +
+            nameValue +
+            " " +
+            lastNameValue +
+            " registered successfully :)"
+        );
+        
+        tout.setEditable(false);
+    }
+
+    private void registerProfessorSubmit() {
+
+        Professor professor;
+        
+        String idValue              = tid.getText();        
+        String nameValue            = tname.getText();        
+        String lastNameValue        = tlastName.getText();        
+        String maritalStatusValue   = tmaritalStatus.getText();        
+        int incomeYearValue         = Integer.parseInt(tincomeYear.getText());
+        int officeNumberValue       = Integer.parseInt(tofficeNumber.getText());
+        String departmentValue      = tdepartment.getText();
+        
+        professor = new Professor(
+            nameValue,
+            lastNameValue,
+            idValue,
+            maritalStatusValue,
+            incomeYearValue,
+            officeNumberValue,
+            departmentValue
+        );
+
+        persons.add(professor);
+
+        tout.setText(
+            "Professor " +
+            nameValue +
+            " " +
+            lastNameValue +
+            " registered successfully :)"
+        );
+        
+        tout.setEditable(false);
+    }
+    
+    private void registerServiceStaffSubmit() {
+
+        ServiceStaff serviceStaff;
+        
+        String idValue              = tid.getText();        
+        String nameValue            = tname.getText();        
+        String lastNameValue        = tlastName.getText();        
+        String maritalStatusValue   = tmaritalStatus.getText();        
+        int    incomeYearValue      = Integer.parseInt(tincomeYear.getText());
+        int    officeNumberValue    = Integer.parseInt(tofficeNumber.getText());
+        String sectionValue         = tsection.getText();
+        
+        serviceStaff = new ServiceStaff(
+            nameValue,
+            lastNameValue,
+            idValue,
+            maritalStatusValue,
+            incomeYearValue,
+            officeNumberValue,
+            sectionValue
+        );
+
+        persons.add(serviceStaff);
+
+        tout.setText(
+            "Service staff " +
+            nameValue +
+            " " +
+            lastNameValue +
+            " registered successfully :)"
+        );
+        
+        tout.setEditable(false);
+    }
+
+    private void updateMaritalStatusSubmit() {
+        
+        String idValue = tid.getText();
+        String maritalStatusValue = tmaritalStatus.getText();
+
+        for (Person person : persons) {
+            
+            if (person.getId().equals(idValue)) {
+                person.setMaritalStatus(maritalStatusValue);
+            }
+        }
+
+        tout.setText("Marital status updated successfully");
+        
+        tout.setEditable(false);
+
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {    
+        
         try {
-            
-            clearPanel();
-
             if (e.getSource() == register) {
+                clearPanel();
                 registerMenu();
             } else if (e.getSource() == consult) {
+                clearPanel();
                 consultMenu();
             } else if (e.getSource() == update) {
+                clearPanel();
                 updateMenu();
             } else if(e.getSource() == home) {
+                clearPanel();
                 menu();
             } else if(e.getSource() == registerStudent) {
+                clearPanel();
                 registerStudent();
             } else if(e.getSource() == registerProfessor) {
+                clearPanel();
                 registerProfessor();
             } else if(e.getSource() == registerServiceStaff) {
+                clearPanel();
                 registerServiceStaff();
             } else if(e.getSource() == consultStudents) {
+                clearPanel();
                 consultStudents();
             } else if(e.getSource() == consultProfessors) {
+                clearPanel();
                 consultProfessors();
             } else if(e.getSource() == consultServiceStaff) {
+                clearPanel();
                 consultServiceStaff();
             } else if(e.getSource() == updateMaritalStatus) {
+                clearPanel();
                 updateMaritalStatus();
             } else if(e.getSource() == updateOffice) {
+                clearPanel();
                 updateOffice();
             } else if(e.getSource() == updateCourse) {
+                clearPanel();
                 updateCourse();
             } else if(e.getSource() == updateDepartment) {
+                clearPanel();
                 updateDepartment();
             } else if(e.getSource() == updateSection) {
+                clearPanel();
                 updateSection();
+            } else if(e.getSource() == registerStudentSubmit) {
+                registerStudentSubmit();
+            } else if(e.getSource() == registerProfessorSubmit) {
+                registerProfessorSubmit();
+            } else if(e.getSource() == registerServiceStaffSubmit) {
+                registerServiceStaffSubmit();
+            } else if(e.getSource() == updateMaritalStatusSubmit) {
+                updateMaritalStatusSubmit();
             }
         } catch (Exception error) {
             System.out.println(error);

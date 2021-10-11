@@ -2,10 +2,10 @@ package classes;
 
 public class Person {
     
-    private String name;
-    private String lastName;
-    private String id;
-    private String maritalStatus;
+    protected String name;
+    protected String lastName;
+    protected String id;
+    protected String maritalStatus;
     
     public Person(String name, String lastName, String id, String maritalStatus) {
         this.name = name;
